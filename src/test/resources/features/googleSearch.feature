@@ -7,7 +7,8 @@ Feature: Google search functionality
     And User is on Google home page
     Then  User should see title is Google
 
+    @google
   Scenario: User search title verification
     Given User is on Google home page
-    When User searches for apple
-    Then User should see apple in the title
+    When User searches for "wooden spoon"
+    Then User should see "wooden spoon" in the title

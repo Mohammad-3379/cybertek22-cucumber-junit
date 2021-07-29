@@ -38,17 +38,16 @@ public class DataTables_StepDefinitions {
 
 
     @When("user enters username and password as below")
-    public void user_enters_username_and_password_as_below(Map<String , String> loginInfo) throws InterruptedException {
+    public void user_enters_username_and_password_as_below(Map<String, String> loginInfo) {
+
         String username = loginInfo.get("username");
         //String password = loginInfo.get("password");
 
         loginPage.emailInput.sendKeys(username);
-
-        Thread.sleep(1000);
         loginPage.passwordInput.sendKeys(loginInfo.get("password"));
 
-        Thread.sleep(1000);
         loginPage.signIn.click();
+        BrowserUtils.sleep(3);
     }
 
 
